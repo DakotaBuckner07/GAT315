@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2c6991d5be1cbb41bfd6450efd88acf, type: 3}
-  m_Name: Gravity
+  m_Script: {fileID: 11500000, guid: c962ee33e4658894596fea4b02db979f, type: 3}
+  m_Name: Collision
   m_EditorClassIdentifier: 
   value: 0
