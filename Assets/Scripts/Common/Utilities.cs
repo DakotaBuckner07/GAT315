@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class Utilities
 {
-
     public static Vector2 Wrap(Vector2 point, Vector2 min, Vector2 max)
     {
         if (point.x > max.x) point.x = min.x;
@@ -13,5 +12,27 @@ public static class Utilities
         if (point.y > max.y) point.y = min.y;
         if (point.y < min.y) point.y = max.y;
         return point;
+    }
+
+    public static Vector2 SpringForce(Vector2 source, Vector2 destination, float restLength, float k)
+    {
+        Vector2 direction = destination - source;
+        float length = direction.magnitude;
+        float x = length - restLength;
+        return (x * -k) * direction.normalized;
+    }
+
+    public static Body GetBodyFromPosition(Vector2 position)
+    {
+        Body body = null;
+
+        Ray ray = Camera.main.ScreenPointToRay(position);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+        if (hit.collider)
+        {
+            body = hit.collider.gameObject.GetComponent<Body>();
+        }
+
+        return body;
     }
 }

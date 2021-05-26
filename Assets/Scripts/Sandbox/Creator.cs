@@ -14,6 +14,7 @@ public class Creator : Action
 
     bool action { get; set; } = false;
     bool oneTime { get; set; } = false;
+    public override eActionType actionType => eActionType.Creator;
 
     public override void StartAction()
     {
